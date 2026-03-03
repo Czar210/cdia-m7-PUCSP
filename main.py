@@ -97,7 +97,7 @@ async def detalhes_prato(prato_id: int, incluir_ingredientes: bool = False):
     raise HTTPException(status_code=404, detail="Prato não encontrado")
 
 @app.post("/pratos/input")
-async def criar_prato(prato: PratoInput, descricao: Optional[str] = None, categoria: Optional[str] = None, preco: Optional[float] = 0, disponivel = Optional[Bool] = False):
+async def criar_prato(prato: PratoInput, descricao: Optional[str] = None, categoria: Optional[str] = None, preco: Optional[float] = 0, disponivel: Optional[bool] = False):
     novo_id = max(p["id"] for p in pratos) + 1
     novo_prato = {"id": novo_id, **pratoInput.model_dump()}
     if descricao:
@@ -108,8 +108,6 @@ async def criar_prato(prato: PratoInput, descricao: Optional[str] = None, catego
         novo_prato['preco'] = preco
     if disponivel:
         novo_prato['disponivel'] = disponivel
-    pratos.append(novo_prato)
-    return novo_prato
     pratos.append(novo_prato)
     return novo_prato
 
