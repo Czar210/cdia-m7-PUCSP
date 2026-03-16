@@ -19,4 +19,22 @@ Nesse tempo o antigo padrão era de arquivos XLM(eXtensible Markup Language) que
 
 O excesso de marcações deixava um arquivo pesado e a obrigatoriedade de abrir e fechar todas as etiquetas era peso a mais.
 
-Daí veio a ideia de que talvez pudesse ser usado algo interno do próprio Javascript pra resolver isso, assim eliminando a necessidade de um 
+Daí veio a ideia de que talvez pudesse ser usado algo interno do próprio Javascript pra resolver isso, assim eliminando a necessidade de um [[Parser]] externo ser instalado pra conseguir resolver isso o próprio Javascript já consegue traduzir extremamente rápido a informação
+
+O JSON segue a ideia de Chave -> Valor com algumas regras como lista sendo dentro de [] e objetos dentro de {} e que nomes tem que estar dentro de "" e os valores são separados por ,
+
+exemplo:
+
+```
+{
+  "nome": "Ana Silva",
+  "idade": 28,
+  "esta_logada": true,
+  "habilidades": ["Python", "Design", "Gestão"],
+  "endereco": {
+    "cidade": "São Paulo",
+    "estado": "SP"
+  }
+}
+```
+

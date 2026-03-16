@@ -1,0 +1,9 @@
+---
+aliases:
+  - Representational State Transfer
+---
+O REST, que significa Representational State Transfer, surgiu oficialmente no ano de 2000 como parte integrante da tese de doutorado de Roy Fielding. Ele foi um dos principais arquitetos por trás do protocolo [[HTTP]] e sua intenção era formalizar um conjunto de princípios e restrições para que a comunicação entre sistemas na web fosse o mais eficiente, simples e escalável possível, aproveitando a infraestrutura que já existia na própria rede mundial de computadores.
+
+Diferente de um protocolo rígido ou de um software específico, o REST funciona como um estilo de arquitetura. O objetivo principal dele é permitir que diferentes aplicações, como um site e um servidor ou um aplicativo de celular e um banco de dados, troquem informações de maneira independente e padronizada. Para que isso aconteça, o REST utiliza os métodos padrão do [[HTTP]] para realizar operações, tratando cada informação como um recurso que pode ser acessado ou modificado através de endereços específicos.
+
+Em termos de eficiência, o REST é amplamente considerado excelente e se tornou o padrão absoluto da indústria por décadas. A sua grande vantagem reside na facilidade de implementação e na capacidade de ser interpretado tanto por humanos quanto por máquinas, especialmente quando utiliza o formato [[JSON]] para o transporte de dados. No entanto, em cenários modernos de altíssima complexidade ou que exigem atualizações constantes em tempo real, ele pode apresentar algumas limitações de performance, o que abriu espaço para tecnologias como o GraphQL ou o gRPC, mas o REST continua sendo a base fundamental para a maioria das conexões que utilizamos hoje na internet.
