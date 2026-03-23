@@ -1,0 +1,6 @@
+---
+aliases:
+  - Features
+  - Funcionalidade
+  - Recurso
+---

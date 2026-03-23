@@ -19,7 +19,7 @@
 - [x] 2.4 — Regras de negócio com validadores
 - [x] 2.5 — Múltiplos erros em uma rota
 - [x] 2.6 — Exception handler global
-- [ ] 2.7 — Desafio: API sob pressão
+- [x] 2.7 — Desafio: API sob pressão
 
 ## Bloco 3
 
