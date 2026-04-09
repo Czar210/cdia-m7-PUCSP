@@ -1,0 +1,39 @@
+# =============================================================
+# CI com Testes -- Bella Tavola
+# =============================================================
+# Evolucao do ci-basico: substitui curl por pytest.
+# Corresponde aos exercicios do Bloco 3 (Parte 2).
+#
+# O que muda em relacao ao basico:
+#   - Nao precisa mais subir a API com uvicorn
+#   - O TestClient do FastAPI faz tudo em memoria
+#   - pytest roda a suite de testes completa
+# =============================================================
+
+name: CI -- Bella Tavola
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  verificar-api:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar o codigo
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
+
+      # O TestClient testa a API sem precisar subir servidor
+      - name: Rodar testes
+        run: pytest tests/ -v --tb=short

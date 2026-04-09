@@ -1,7 +1,13 @@
 fastapi
 uvicorn[standard]
 pydantic
+pydantic-settings
 requests
 faker
 pandas
 numpy
+httpx
+pytest
+scikit-learn
+joblib
+huggingface_hub

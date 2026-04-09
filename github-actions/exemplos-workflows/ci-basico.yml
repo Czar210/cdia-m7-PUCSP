@@ -1,0 +1,48 @@
+# =============================================================
+# CI Basico -- Bella Tavola
+# =============================================================
+# Este e o workflow MINIMO para verificar se a API sobe.
+# Corresponde ao exercicio 2.3 da Parte 1.
+#
+# O que faz:
+#   1. Baixa o codigo do repositorio
+#   2. Instala Python 3.12
+#   3. Instala dependencias do requirements.txt
+#   4. Sobe a API em background
+#   5. Espera 5 segundos
+#   6. Faz um curl para verificar se responde
+# =============================================================
+
+name: CI -- Bella Tavola
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  verificar-api:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Baixar o codigo do repositorio
+      - name: Baixar o codigo
+        uses: actions/checkout@v4
+
+      # Step 2: Instalar Python
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # Step 3: Instalar dependencias
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
+
+      # Step 4: Subir a API em background e testar
+      - name: Verificar se a API sobe
+        run: |
+          uvicorn main:app --host 0.0.0.0 --port 8000 &
+          sleep 5
+          curl --fail http://localhost:8000/
