@@ -1,8 +1,17 @@
+import sys
+from pathlib import Path
+
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 from fastapi.exceptions import RequestValidationError
 
+# ensure repo root is on sys.path so Hug package is importable
+_repo_root = str(Path(__file__).resolve().parent.parent)
+if _repo_root not in sys.path:
+    sys.path.insert(0, _repo_root)
+
 from routers import pratos, bebidas, pedidos, reservas
+from Hug.routers import predict
 
 app = FastAPI(
     title="Bella Tavola API",
@@ -38,3 +47,16 @@ app.include_router(pratos.router, prefix="/pratos", tags=["Pratos"])
 app.include_router(bebidas.router, prefix="/bebidas", tags=["Bebidas"])
 app.include_router(pedidos.router, prefix="/pedidos", tags=["Pedidos"])
 app.include_router(reservas.router, prefix="/reservas", tags=["Reservas"])
+app.include_router(predict.router, prefix="/ml", tags=["ML"])
+
+
+@app.get("/health", tags=["Health"])
+async def health():
+    model_status = "unavailable"
+    try:
+        from Hug.routers.predict import get_model
+        get_model()
+        model_status = "loaded"
+    except Exception:
+        model_status = "error"
+    return {"api": "ok", "model": model_status}

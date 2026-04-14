@@ -2,11 +2,11 @@ from pathlib import Path
 import os
 
 
-def ensure_data(outdir: str | Path | None = None, n_customers: int | None = None, n_orders: int | None = None, seed=None, overwrite: bool = False):
+def ensure_data(outdir: str | Path | None = None, seed=None, overwrite: bool = False):
     """Ensure synthetic data files exist in `outdir`.
 
-    - Reads defaults from environment variables `HUG_OUTPUT_DIR`, `HUG_N_CUSTOMERS`, `HUG_N_ORDERS`, `HUG_SEED` when parameters are not provided.
-    - If `customers.csv` or `orders.csv` is missing (or `overwrite=True`), calls `generator.generate_all()` and writes the CSVs.
+    - Reads defaults from environment variables `HUG_OUTPUT_DIR` and `HUG_SEED`.
+    - If no CSVs exist (or `overwrite=True`), generates credit, churn, and fraud datasets.
 
     Returns a dict with paths and a `generated` boolean.
     """
@@ -29,34 +29,15 @@ def ensure_data(outdir: str | Path | None = None, n_customers: int | None = None
     # Lazy import to keep module lightweight
     from . import generator
 
-    # Check for class_sep variations in env: comma-separated list
-    class_seps_env = os.environ.get("HUG_CLASS_SEPS")
-    class_seps = None
-    if class_seps_env:
-        try:
-            class_seps = [float(s.strip()) for s in class_seps_env.split(",") if s.strip()]
-        except ValueError:
-            class_seps = None
+    # Generate all three domains
+    seed_val = seed if seed is not None else 42
 
-    # Generate data: either variations or a single dataset
-    if class_seps:
-        data = generator.generate_variations(class_seps=class_seps)
-        gen_params = {"class_seps": class_seps}
-    else:
-        try:
-            data = generator.generate_all()
-        except TypeError:
-            try:
-                data = generator.generate_all(random_state=seed)
-            except Exception:
-                data = generator.generate_all()
-        gen_params = {}
+    credit_df, _, _ = generator.generate_credit(n_samples=1000, seed=seed_val)
+    churn_df, _, _ = generator.generate_churn(n_samples=1000, seed=seed_val)
+    fraud_df, _, _ = generator.generate_fraud(n_samples=1000, seed=seed_val)
 
-    # Normalize and write each DataFrame to CSV
-    import pandas as _pd
-
-    if hasattr(data, "to_csv") or isinstance(data, _pd.DataFrame):
-        data = {"dataset": data}
+    data = {"credit": credit_df, "churn": churn_df, "fraud": fraud_df}
+    gen_params = {"seed": seed_val, "n_samples": 1000}
 
     written = []
     for name, val in data.items():

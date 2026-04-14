@@ -25,10 +25,13 @@ def _get_ensure_data():
 def main():
     ensure_data = _get_ensure_data()
     result = ensure_data()
+    files = result.get("files", [])
     if result.get("generated"):
-        print(f"Generated data: {result['customers']} and {result['orders']}")
+        print(f"Generated {len(files)} file(s):")
+        for f in files:
+            print(f"  - {f}")
     else:
-        print(f"Data already present: {result['customers']} and {result['orders']}")
+        print(f"Data already present ({len(files)} file(s)).")
 
 
 if __name__ == "__main__":
