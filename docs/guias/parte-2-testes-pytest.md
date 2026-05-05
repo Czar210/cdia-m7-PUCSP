@@ -12,10 +12,10 @@
 
 Na Parte 1, o pipeline verificava se a API subia usando `curl`. Isso e util mas insuficiente:
 
-- O `curl` testa UMA rota
-- Nao valida o conteudo da resposta
-- Nao testa entradas invalidas
-- Nao detecta regressoes em rotas especificas
+* O `curl` testa UMA rota
+* Nao valida o conteudo da resposta
+* Nao testa entradas invalidas
+* Nao detecta regressoes em rotas especificas
 
 O pytest resolve tudo isso: voce escreve verificacoes especificas para cada comportamento esperado.
 
@@ -39,8 +39,8 @@ bella_tavola/
 
 O pytest segue convencoes automaticas:
 
-- Arquivos que comecam com `test_` ou terminam com `_test.py`
-- Funcoes dentro desses arquivos que comecam com `test_`
+* Arquivos que comecam com `test_` ou terminam com `_test.py`
+* Funcoes dentro desses arquivos que comecam com `test_`
 
 ```python
 # pytest VAI executar esta:
@@ -248,11 +248,11 @@ def test_listar_pratos(client):
 ```
 
 **O que a fixture de `client` resolve:**
-- Elimina a variavel global `client = TestClient(app)`
-- Organiza melhor o codigo
+* Elimina a variavel global `client = TestClient(app)`
+* Organiza melhor o codigo
 
 **O que ela NAO resolve:**
-- Nao reinicializa o estado interno da aplicacao (a lista de pratos em memoria continua entre testes)
+* Nao reinicializa o estado interno da aplicacao (a lista de pratos em memoria continua entre testes)
 
 ### conftest.py -- fixtures compartilhadas
 
@@ -342,8 +342,8 @@ markers =
 ```
 
 **No pipeline, marcadores permitem:**
-- Rodar testes smoke em PRs (rapido)
-- Rodar testes de integracao apenas em push para main (mais completo)
+* Rodar testes smoke em PRs (rapido)
+* Rodar testes de integracao apenas em push para main (mais completo)
 
 ### Exercicios do Bloco 4
 
@@ -361,15 +361,15 @@ markers =
 
 Ao final, voce deve conseguir:
 
-- [ ] Criar testes com `TestClient` do FastAPI
-- [ ] Testar status codes, estrutura de resposta e validacao de entrada (422)
-- [ ] Ler os logs do pytest na aba Actions e identificar qual teste falhou
-- [ ] Integrar testes ao pipeline com `pytest tests/ -v`
-- [ ] Criar e usar fixtures no `conftest.py`
-- [ ] Explicar o que a fixture de client resolve e o que nao resolve
-- [ ] Reescrever testes frageis para verificar comportamentos relativos
-- [ ] Usar `@pytest.mark.parametrize` para multiplos casos
-- [ ] Criar marcadores e filtrar testes no pipeline
+* [ ] Criar testes com `TestClient` do FastAPI
+* [ ] Testar status codes, estrutura de resposta e validacao de entrada (422)
+* [ ] Ler os logs do pytest na aba Actions e identificar qual teste falhou
+* [ ] Integrar testes ao pipeline com `pytest tests/ -v`
+* [ ] Criar e usar fixtures no `conftest.py`
+* [ ] Explicar o que a fixture de client resolve e o que nao resolve
+* [ ] Reescrever testes frageis para verificar comportamentos relativos
+* [ ] Usar `@pytest.mark.parametrize` para multiplos casos
+* [ ] Criar marcadores e filtrar testes no pipeline
 
 ---
 

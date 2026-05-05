@@ -27,9 +27,9 @@ O objetivo deste bloco: **o pipeline baixa o modelo do Hub, carrega, e verifica 
 
 Um **secret** e uma variavel de ambiente protegida. O GitHub:
 
-- **Nunca exibe o valor nos logs** -- mascara com `***`
-- Armazena de forma criptografada
-- **Nao disponibiliza para PRs de forks externos** (protecao de seguranca)
+* **Nunca exibe o valor nos logs** -- mascara com `***`
+* Armazena de forma criptografada
+* **Nao disponibiliza para PRs de forks externos** (protecao de seguranca)
 
 #### Como criar um secret
 
@@ -212,10 +212,10 @@ def test_modelo_distingue_casos_extremos(client):
 
 O pipeline roda em uma **maquina limpa**: sem historico, sem estado, sem os arquivos da sua maquina. Isso expoe:
 
-- Dependencias instaladas globalmente mas nao no `requirements.txt`
-- Arquivos que existem localmente mas nao foram commitados
-- Variaveis de ambiente definidas so na sua maquina
-- Caminhos que funcionam no Windows mas nao no Linux (o runner e Ubuntu)
+* Dependencias instaladas globalmente mas nao no `requirements.txt`
+* Arquivos que existem localmente mas nao foram commitados
+* Variaveis de ambiente definidas so na sua maquina
+* Caminhos que funcionam no Windows mas nao no Linux (o runner e Ubuntu)
 
 ### Como ler um log de pipeline
 
@@ -231,8 +231,8 @@ A ultima mensagem de erro geralmente e a mais informativa. Mas nem sempre -- as 
 | **ERROR** | O teste nem chegou a executar (erro de import, fixture quebrada) | `ModuleNotFoundError` |
 
 **Diferenca pratica:**
-- FAILED = seu teste encontrou um bug na API
-- ERROR = seu teste tem um problema de configuracao
+* FAILED = seu teste encontrou um bug na API
+* ERROR = seu teste tem um problema de configuracao
 
 ### Mapa de falhas comuns
 
@@ -337,17 +337,17 @@ Veja o [exemplo completo](../exemplos-workflows/ci-completo.yml) para referencia
 
 Ao final, voce deve conseguir:
 
-- [ ] Criar e configurar um secret no GitHub
-- [ ] Usar `${{ secrets.HF_TOKEN }}` corretamente
-- [ ] Verificar que o token esta disponivel sem expo-lo nos logs
-- [ ] Baixar e carregar o modelo do Hub dentro de um teste
-- [ ] Testar o endpoint `/ml/predict` com TestClient
-- [ ] Adicionar cache do Hugging Face ao pipeline
-- [ ] Identificar qual step falhou em um log
-- [ ] Distinguir ERROR de FAILED no pytest
-- [ ] Localizar causa raiz lendo o log
-- [ ] Reproduzir falha localmente em ambiente limpo
-- [ ] Montar o pipeline completo com 3 jobs
+* [ ] Criar e configurar um secret no GitHub
+* [ ] Usar `${{ secrets.HF_TOKEN }}` corretamente
+* [ ] Verificar que o token esta disponivel sem expo-lo nos logs
+* [ ] Baixar e carregar o modelo do Hub dentro de um teste
+* [ ] Testar o endpoint `/ml/predict` com TestClient
+* [ ] Adicionar cache do Hugging Face ao pipeline
+* [ ] Identificar qual step falhou em um log
+* [ ] Distinguir ERROR de FAILED no pytest
+* [ ] Localizar causa raiz lendo o log
+* [ ] Reproduzir falha localmente em ambiente limpo
+* [ ] Montar o pipeline completo com 3 jobs
 
 ---
 

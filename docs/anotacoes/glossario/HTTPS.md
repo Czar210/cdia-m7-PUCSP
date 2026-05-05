@@ -1,6 +1,6 @@
 ---
 aliases:
-  - Hypertext Transfer Protocol Secure
+  * Hypertext Transfer Protocol Secure
 ---
 O HTTPS é essencialmente a versão protegida e criptografada do [[HTTP]] que utilizamos para navegar em sites. Ele foi criado originalmente pela Netscape Communications em 1994 para o seu navegador Netscape Navigator, com o objetivo inicial de permitir transações financeiras e trocas de dados sensíveis com segurança na internet. Naquela época, a web era um lugar onde os dados viajavam de forma aberta, o que significava que qualquer pessoa mal-intencionada posicionada entre o seu computador e o servidor poderia interceptar e ler suas senhas ou informações pessoais sem grandes dificuldades. O HTTPS resolveu esse problema adicionando uma camada de segurança que começou com o protocolo SSL e depois evoluiu para o que hoje chamamos de [[TLS]].
 

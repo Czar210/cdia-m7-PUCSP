@@ -1,6 +1,6 @@
 ---
 aliases:
-  - Features
-  - Funcionalidade
-  - Recurso
+  * Features
+  * Funcionalidade
+  * Recurso
 ---

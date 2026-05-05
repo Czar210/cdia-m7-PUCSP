@@ -1,6 +1,6 @@
 ---
 aliases:
-  - Representational State Transfer
+  * Representational State Transfer
 ---
 O REST, que significa Representational State Transfer, surgiu oficialmente no ano de 2000 como parte integrante da tese de doutorado de Roy Fielding. Ele foi um dos principais arquitetos por trás do protocolo [[HTTP]] e sua intenção era formalizar um conjunto de princípios e restrições para que a comunicação entre sistemas na web fosse o mais eficiente, simples e escalável possível, aproveitando a infraestrutura que já existia na própria rede mundial de computadores.
 

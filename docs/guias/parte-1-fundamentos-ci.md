@@ -21,9 +21,9 @@ CI resolve isso automatizando a verificacao a cada commit. Se algo quebrou, voce
 **Definicao:** Integrar mudancas de codigo com frequencia e verificar automaticamente se a integracao nao quebrou nada.
 
 **Na pratica, isso significa:**
-- A cada push ou pull request, um **pipeline** roda automaticamente
-- O pipeline executa uma sequencia de etapas (instalar dependencias, rodar testes, verificar formatacao)
-- Se qualquer etapa falha, o pipeline fica vermelho e voce e notificado
+* A cada push ou pull request, um **pipeline** roda automaticamente
+* O pipeline executa uma sequencia de etapas (instalar dependencias, rodar testes, verificar formatacao)
+* Se qualquer etapa falha, o pipeline fica vermelho e voce e notificado
 
 **O pipeline tipico de CI:**
 ```
@@ -45,10 +45,10 @@ CD tem dois significados relacionados:
 
 Em projetos tradicionais, uma mudanca no codigo quebra uma funcionalidade. Em ML, uma mudanca pode:
 
-- Alterar **silenciosamente** o formato esperado pelo modelo
-- Mudar a **ordem das features** e gerar predicoes erradas sem erro aparente
-- Fazer o carregamento do modelo falhar apenas em producao
-- Quebrar a rota da API de predicao sem afetar as outras
+* Alterar **silenciosamente** o formato esperado pelo modelo
+* Mudar a **ordem das features** e gerar predicoes erradas sem erro aparente
+* Fazer o carregamento do modelo falhar apenas em producao
+* Quebrar a rota da API de predicao sem afetar as outras
 
 O ponto-chave: em ML, o codigo pode "funcionar" (sem erros) mas produzir **resultados errados**. CI com bons testes detecta isso.
 
@@ -258,13 +258,13 @@ Este e o exercicio mais importante da Parte 1. Passo a passo:
 
 Ao final, voce deve conseguir:
 
-- [ ] Explicar CI vs CD (Entrega) vs CD (Implantacao)
-- [ ] Identificar situacoes em que mudancas quebram algo silenciosamente
-- [ ] Explicar `uses` vs `run` em um step
-- [ ] Identificar os 4 componentes de um workflow (name, on, jobs, steps)
-- [ ] Escrever um workflow do zero
-- [ ] Fazer o pipeline ficar verde na aba Actions
-- [ ] Ler o log quando algo falha e identificar a causa
+* [ ] Explicar CI vs CD (Entrega) vs CD (Implantacao)
+* [ ] Identificar situacoes em que mudancas quebram algo silenciosamente
+* [ ] Explicar `uses` vs `run` em um step
+* [ ] Identificar os 4 componentes de um workflow (name, on, jobs, steps)
+* [ ] Escrever um workflow do zero
+* [ ] Fazer o pipeline ficar verde na aba Actions
+* [ ] Ler o log quando algo falha e identificar a causa
 
 ---
 

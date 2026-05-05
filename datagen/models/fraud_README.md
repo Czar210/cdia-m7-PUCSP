@@ -1,16 +1,16 @@
 ---
 language: pt
 tags:
-  - sklearn
-  - classification
-  - fraud
-  - mlops
+  * sklearn
+  * classification
+  * fraud
+  * mlops
 ---
 
 # mlops-fraud-v1
 
-Modelo RandomForest para classificação binária ,  domínio **fraud**.
-Desenvolvido como parte do curso CDIA M7 ,  Semana 3.
+Modelo RandomForest para classificação binária, domínio **fraud**.
+Desenvolvido como parte do curso CDIA M7, Semana 3.
 
 ## Uso
 
@@ -45,6 +45,6 @@ prediction = model.predict([[...]])
 
 ## Limitações
 
-- Treinado com **dados sintéticos** ,  não reflete distribuições reais.
-- RandomForest com hiperparâmetros padrão, sem tuning.
-- Proporção de classes fixada na geração.
+* Treinado com **dados sintéticos**, não reflete distribuições reais.
+* RandomForest com hiperparâmetros padrão, sem tuning.
+* Proporção de classes fixada na geração.

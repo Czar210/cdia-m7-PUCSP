@@ -72,8 +72,8 @@ tags:
 
 # {repo_id.split('/')[-1]}
 
-Modelo RandomForest para classificação binária — domínio **{domain}**.
-Desenvolvido como parte do curso CDIA M7 — Semana 3.
+Modelo RandomForest para classificação binária, domínio **{domain}**.
+Desenvolvido como parte do curso CDIA M7, Semana 3.
 
 ## Uso
 
@@ -102,9 +102,9 @@ prediction = model.predict([[...]])
 
 ## Limitações
 
-- Treinado com **dados sintéticos** — não reflete distribuições reais.
-- RandomForest com hiperparâmetros padrão, sem tuning.
-- Proporção de classes fixada na geração.
+* Treinado com **dados sintéticos**, não reflete distribuições reais.
+* RandomForest com hiperparâmetros padrão, sem tuning.
+* Proporção de classes fixada na geração.
 """
 
 

@@ -220,8 +220,8 @@ Com multiplos parametros:
 ```python
 @pytest.mark.parametrize("campo,valor_invalido", [
     ("preco", -1.0),
-    ("nome", "AB"),              # muito curto
-    ("categoria", "esoterico"),  # categoria invalida
+    ("nome", "AB"),             # muito curto
+    ("categoria", "esoterico"), # categoria invalida
 ])
 def test_campo_invalido_retorna_422(client, campo, valor_invalido):
     prato = {"nome": "Teste", "categoria": "massa", "preco": 30.0}
@@ -317,6 +317,6 @@ tests/test_modelo.py::test_modelo_carrega ERROR          <-- import/setup falhou
 ========= 2 passed, 1 failed, 1 error =========
 ```
 
-- **PASSED:** teste executou e todos os asserts passaram
-- **FAILED:** teste executou, mas um assert falhou (bug na API ou no teste)
-- **ERROR:** teste nem executou (erro de import, fixture quebrada, dependencia faltando)
+* **PASSED:** teste executou e todos os asserts passaram
+* **FAILED:** teste executou, mas um assert falhou (bug na API ou no teste)
+* **ERROR:** teste nem executou (erro de import, fixture quebrada, dependencia faltando)

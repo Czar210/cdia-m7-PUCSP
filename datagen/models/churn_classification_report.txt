@@ -8,4 +8,4 @@
 weighted avg       1.00      1.00      1.00       400
 
 
-Positive class metrics — precision: 1.00, recall: 1.00, f1: 1.00
+Positive class metrics , precision: 1.00, recall: 1.00, f1: 1.00

@@ -1,6 +1,6 @@
 ---
 aliases:
-  - Analisador Sintático
+  * Analisador Sintático
 ---
 Um componente de software que pega dados de entrada e transforma esses dados numa outra estrutura de dados organizada.
 

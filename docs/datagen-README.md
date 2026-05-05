@@ -1,4 +1,4 @@
-# Hug ,  Synthetic Data Generators
+# Hug, Synthetic Data Generators
 
 Pacote para gerar datasets sintéticos de classificação usados nos notebooks do curso.
 

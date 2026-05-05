@@ -1,6 +1,6 @@
 ---
 aliases:
-  - Uniform Resource Locator
+  * Uniform Resource Locator
 ---
 O URL, que significa Uniform Resource Locator ou Localizador Padrão de Recursos, foi criado oficialmente em 1994 por Tim Berners-Lee, o mesmo cientista que inventou a World Wide Web no CERN. A necessidade surgiu porque, conforme a rede crescia, era preciso uma forma única e universal de encontrar documentos espalhados por diferentes computadores ao redor do mundo. Antes disso, localizar um arquivo específico na rede era um processo manual e técnico muito mais difícil. Berners-Lee projetou o URL para ser o endereço definitivo que qualquer navegador poderia entender para buscar uma informação, funcionando como a base fundamental da navegação na internet como a conhecemos hoje.
 

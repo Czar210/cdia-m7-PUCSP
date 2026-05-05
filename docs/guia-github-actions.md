@@ -50,12 +50,12 @@ github-actions/
 
 Antes de comecar, confirme que voce tem:
 
-- [ ] API do Bella Tavola funcionando localmente (`uvicorn main:app --reload`)
-- [ ] Modelo publicado no Hugging Face Hub (Semana 2)
-- [ ] Conta no GitHub com o projeto em um repositorio
-- [ ] Git configurado localmente
-- [ ] Python com `pip` funcionando
-- [ ] `httpx` e `pytest` instalados (ou no `requirements.txt`)
+* [ ] API do Bella Tavola funcionando localmente (`uvicorn main:app --reload`)
+* [ ] Modelo publicado no Hugging Face Hub (Semana 2)
+* [ ] Conta no GitHub com o projeto em um repositorio
+* [ ] Git configurado localmente
+* [ ] Python com `pip` funcionando
+* [ ] `httpx` e `pytest` instalados (ou no `requirements.txt`)
 
 ---
 
@@ -171,8 +171,8 @@ Push ou PR para main
 
 ## Guias detalhados
 
-- [Parte 1 -- Fundamentos de CI e GitHub Actions](guias/parte-1-fundamentos-ci.md)
-- [Parte 2 -- Testes automatizados com pytest](guias/parte-2-testes-pytest.md)
-- [Parte 3 -- Integracao com modelo e debugging](guias/parte-3-integracao-debug.md)
-- [Referencia YAML](guias/referencia-yaml.md)
-- [Referencia pytest](guias/referencia-pytest.md)
+* [Parte 1 -- Fundamentos de CI e GitHub Actions](guias/parte-1-fundamentos-ci.md)
+* [Parte 2 -- Testes automatizados com pytest](guias/parte-2-testes-pytest.md)
+* [Parte 3 -- Integracao com modelo e debugging](guias/parte-3-integracao-debug.md)
+* [Referencia YAML](guias/referencia-yaml.md)
+* [Referencia pytest](guias/referencia-pytest.md)

@@ -56,7 +56,7 @@ def train_on_domain(domain: str, n_samples: int = 2000, seed: int = 42, proporca
         except Exception:
             precision = recall = f1 = 0.0
 
-    interp = f"Positive class metrics — precision: {precision:.2f}, recall: {recall:.2f}, f1: {f1:.2f}"
+    interp = f"Positive class metrics, precision: {precision:.2f}, recall: {recall:.2f}, f1: {f1:.2f}"
     print(interp)
 
     # save model and metrics

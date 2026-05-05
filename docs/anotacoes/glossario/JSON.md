@@ -1,6 +1,6 @@
 ---
 aliases:
-  - JavasScript Object Notation
+  * JavasScript Object Notation
 ---
 JSON é uma extensão de arquivo surgido no inicio dos anos 2000 para resolver um problema de web, numa época onde páginas web eram estáticas se você quisesse uma informação nova tinha que recarregar a página inteira que numa época onde a internet era lerda se tornava uma tortura de ficar refazendo o tempo inteiro.
 

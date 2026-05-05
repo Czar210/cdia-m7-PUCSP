@@ -1,6 +1,6 @@
 ---
 aliases:
-  - Transport Layer Security
+  * Transport Layer Security
 ---
 O sucessor direto de uma tecnologia chamada SSL, que foi a primeira tentativa em larga escala de proteger a internet. A história começa em 1994, quando a empresa Netscape desenvolveu o SSL 1.0. Ele nunca chegou a ser lançado por ter falhas graves, mas o SSL 2.0 e o 3.0, lançados entre 1995 e 1996, pavimentaram o caminho. Em 1999, um grupo internacional chamado IETF assumiu o projeto e lançou o TLS 1.0, criado por Tim Dierks e Christopher Allen. O objetivo era criar um padrão que não pertencesse a uma única empresa e que fosse mais seguro que o antigo SSL. Desde então, ele evoluiu por várias versões, como o TLS 1.2 em 2008 e o TLS 1.3 em 2018, que é o padrão mais moderno, rápido e seguro que utilizamos hoje.
 

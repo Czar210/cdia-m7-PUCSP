@@ -1,6 +1,6 @@
 ---
 aliases:
-  - Application Programming Interface
+  * Application Programming Interface
 ---
 A aplicação que permite que dois softwares distintos conversem entre si por meio de requisições
 

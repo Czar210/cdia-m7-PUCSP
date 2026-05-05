@@ -24,7 +24,7 @@ def main():
     if not wait_for_server():
         fail("Server did not start in time")
 
-    print("Server up — running tests...")
+    print("Server up, running tests...")
 
     # Root
     r = requests.get(f"{BASE}/")
