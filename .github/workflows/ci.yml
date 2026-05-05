@@ -25,20 +25,20 @@ jobs:
           python-version: "3.12"
 
       - name: Instalar dependências
-        run: pip install -r Fast-API/requirements.txt
+        run: pip install -r api/requirements.txt
 
       - name: Diagnóstico do ambiente
         run: |
           echo "=== Python ==="
           python --version
           echo "=== Arquivos do projeto ==="
-          test -f Fast-API/main.py        && echo "✅ main.py"          || echo "❌ main.py ausente"
-          test -f Fast-API/config.py       && echo "✅ config.py"        || echo "❌ config.py ausente"
-          test -f Fast-API/pytest.ini      && echo "✅ pytest.ini"       || echo "❌ pytest.ini ausente"
-          test -d Fast-API/tests           && echo "✅ tests/"           || echo "❌ tests/ ausente"
+          test -f api/main.py        && echo "✅ main.py"          || echo "❌ main.py ausente"
+          test -f api/config.py       && echo "✅ config.py"        || echo "❌ config.py ausente"
+          test -f api/pytest.ini      && echo "✅ pytest.ini"       || echo "❌ pytest.ini ausente"
+          test -d api/tests           && echo "✅ tests/"           || echo "❌ tests/ ausente"
 
       - name: Rodar testes smoke
-        working-directory: Fast-API
+        working-directory: api
         run: pytest tests/ -v -m smoke --tb=short
 
   # ─────────────────────────────────────────────────────
@@ -61,13 +61,13 @@ jobs:
           python-version: "3.12"
 
       - name: Instalar dependências
-        run: pip install -r Fast-API/requirements.txt
+        run: pip install -r api/requirements.txt
 
       - name: Cache do modelo Hugging Face
         uses: actions/cache@v4
         with:
           path: ~/.cache/huggingface
-          key: hf-model-${{ hashFiles('Fast-API/requirements.txt') }}
+          key: hf-model-${{ hashFiles('api/requirements.txt') }}
 
       - name: Verificar autenticação com Hugging Face
         run: python -c "import os; assert os.environ.get('HF_TOKEN'), 'HF_TOKEN não configurado'"
@@ -75,11 +75,11 @@ jobs:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
 
       - name: Rodar testes completos
-        working-directory: Fast-API
+        working-directory: api
         run: pytest tests/ -v --tb=short
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-          MODEL_PATH: ../Hug/data/models/credit_rf.pkl
+          MODEL_PATH: ../datagen/models/credit_rf.pkl
 
   # ─────────────────────────────────────────────────────
   # JOB 3: relatorio

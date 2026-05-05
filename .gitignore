@@ -1,8 +1,12 @@
 .venv/
 __pycache__/
 *.pyc
+.pytest_cache/
 .env
 .env.local
 .env.*.local
 # Obsidian workspace state
 .obsidian/
+
+# Conteúdo pessoal, não publicar
+docs/video-script.md
