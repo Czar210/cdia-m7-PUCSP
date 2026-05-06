@@ -1,6 +1,6 @@
 # Projeto Bella Tavola
 
-Entrega da Semana 3 da disciplina **CD2** (CDIA M7, PUC-SP, 2026).
+Entrega da Semana 5 da disciplina **CD2** (CDIA M7, PUC-SP, 2026).
 
 Este repositório reúne os 5 cadernos resolvidos do módulo, junto com o código completo de uma API FastAPI integrada a um modelo de Machine Learning publicado no Hugging Face Hub, e um pipeline de Integração Contínua no GitHub Actions.
 
