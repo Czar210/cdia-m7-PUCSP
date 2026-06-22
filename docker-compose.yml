@@ -1,0 +1,55 @@
+# docker-compose.yml — orquestra a Bella Tavola como um sistema coeso.
+# Versão final da série e05: API + PostgreSQL + Nginx, com healthcheck no banco.
+#
+# Suba tudo a partir da raiz do projeto:
+#   docker compose up        (foreground, logs visíveis)
+#   docker compose up -d     (background)
+#   docker compose down      (para e remove contêineres/rede; PRESERVA volumes)
+#   docker compose down -v   (remove também os volumes — apaga os dados)
+#
+# A API fica atrás do Nginx: o único ponto de entrada é http://localhost (porta 80).
+
+services:
+  api:
+    # Constrói a imagem a partir do Dockerfile em api/.
+    build: ./api
+    # Sem `ports`: a API não é exposta diretamente ao host — o Nginx é a porta de entrada.
+    env_file:
+      - .env          # carrega HF_TOKEN, HF_REPO_ID e demais variáveis
+    environment:
+      # String de conexão usando o NOME DO SERVIÇO ('db') como hostname na rede do Compose.
+      # 'localhost' aqui seria o próprio contêiner da API, não o banco.
+      DATABASE_URL: postgresql://bella:secreta@db:5432/bellatavolada
+    volumes:
+      - bella-dados:/app/data   # onde dados gerados em runtime persistiriam
+    depends_on:
+      db:
+        condition: service_healthy   # só inicia depois do banco aceitar conexões
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: bellatavolada
+      POSTGRES_USER: bella
+      POSTGRES_PASSWORD: secreta
+    volumes:
+      - bella-pg-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U bella -d bellatavolada"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      start_period: 10s   # tempo extra na primeira inicialização
+
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"           # Nginx exposto na porta 80 do host
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - api
+
+volumes:
+  bella-dados:
+  bella-pg-data:

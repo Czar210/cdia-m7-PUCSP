@@ -1,0 +1,34 @@
+# .dockerignore — o que NÃO entra no build context da imagem (contexto: api/).
+# Mesma lógica do .gitignore: reduz o contexto, acelera o build, protege secrets
+# e mantém a imagem de produção limpa.
+
+# Bytecode Python — gerado automaticamente, desnecessário na imagem
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+
+# Secrets — nunca devem entrar na imagem (HF_TOKEN etc.)
+.env
+.env.*
+*.env
+
+# Ambientes virtuais
+.venv/
+venv/
+env_ci_test/
+
+# Artefatos de ML — o modelo é baixado do Hugging Face Hub em runtime
+*.pkl
+*.joblib
+
+# Testes e cache de teste — não pertencem à imagem de produção
+tests/
+.pytest_cache/
+
+# Cadernos Jupyter
+*.ipynb
+.ipynb_checkpoints/
+
+# O próprio dockerignore (convenção)
+.dockerignore
